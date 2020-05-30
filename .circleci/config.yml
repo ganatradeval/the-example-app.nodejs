@@ -7,6 +7,6 @@ jobs:
       - add_ssh_keys
       - run:
           name: Deploy Over SSH
-          command:
+          command: |
             echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCgYuONc7zmdHBNXAGQfYta+rIDB8F2l+3G0HmBjX7Ge8WSH/szL/wCKzJm8zH0TpXxVw9UI9EfvizXOZZxxz/Q/0jmnkUEQtVxRiYk+/mzYUkUtg/V8LhA8HOw+kbBWMIQzfcNZmQiV7bPvPuTpq7f3Uy5sK3hS9P/aBV6i2XLHLTmRKWwhF+qhS8E6TKAyF1vi8JoszRm93BKy3+bhybo60XZNK1Qpfh4RDSm2aUc6fdy8oGtV8rE8DcUU69ksdozMkm/HfGuxKUV+kA8gaUGmSPbuyGk+Oga1FcLx2ls1xztCwt79RtF6r8XMknrRAALnQaNKS0RpHxZs+3YGHs9 ganatradeval@gmail.com'  >> ~/.ssh/known_hosts
             ssh ubuntu@54.88.197.133 "echo 'Hello World!' > /home/ubuntu/test.txt"
