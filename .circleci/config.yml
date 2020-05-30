@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.0
+    steps:
+      - run:
+          name: Deploy Over SSH
+          command:
+            ssh ubuntu@54.88.197.133 "echo 'Hello World!' > /home/ubuntu/test.txt"
