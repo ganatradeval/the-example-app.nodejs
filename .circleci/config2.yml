@@ -22,3 +22,8 @@ jobs:
       # run tests!
       - run: yarn test
 
+  deploy-job:
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+          - 	"d0:12:6d:86:9d:31:1b:a4:41:9f:cc:a7:c4:66:f6:0d"
