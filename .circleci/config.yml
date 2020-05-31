@@ -13,13 +13,13 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            echo -e "Host 54.88.197.133\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+            # echo -e "Host 54.88.197.133\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
             # echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCgYuONc7zmdHBNXAGQfYta+rIDB8F2l+3G0HmBjX7Ge8WSH/szL/wCKzJm8zH0TpXxVw9UI9EfvizXOZZxxz/Q/0jmnkUEQtVxRiYk+/mzYUkUtg/V8LhA8HOw+kbBWMIQzfcNZmQiV7bPvPuTpq7f3Uy5sK3hS9P/aBV6i2XLHLTmRKWwhF+qhS8E6TKAyF1vi8JoszRm93BKy3+bhybo60XZNK1Qpfh4RDSm2aUc6fdy8oGtV8rE8DcUU69ksdozMkm/HfGuxKUV+kA8gaUGmSPbuyGk+Oga1FcLx2ls1xztCwt79RtF6r8XMknrRAALnQaNKS0RpHxZs+3YGHs9 ganatradeval@gmail.com'  >> ~/.ssh/known_hosts
             # echo '3c:f7:eb:b0:18:a3:d0:03:88:b2:14:99:c9:b8:de:b9' >> ~/.ssh/known_hosts
-            ssh-keyscan -H 54.88.197.133 >> ~/.ssh/known_hosts
-            ssh ubuntu@54.88.197.133 "echo 'Hello World!' > /home/ubuntu/test.txt"
-            echo 'Hello World!' > test.txt
-            scp test.txt ubuntu@54.88.197.133:~/test.txt
+            # ssh-keyscan -H 54.88.197.133 >> ~/.ssh/known_hosts
+            ssh $SSH_USER@$SSH_HOST "echo 'Hello World!' > /home/ubuntu/test.txt"
+            # echo 'Hello World!' > test.txt
+            # scp test.txt ubuntu@54.88.197.133:~/test.txt
       - save_cache:
           paths:
             - node_modules
