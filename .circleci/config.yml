@@ -20,7 +20,7 @@ jobs:
             echo "Known Hosts added!"
             cat ~/.ssh/known_hosts
             echo "Running Deploy command...."
-            ssh $SSH_USER@$SSH_HOST "echo 'Hello World' >> /home/ubuntu/test.txt"
+            ssh $SSH_USER@$SSH_HOST "echo 'Hi D....' >> /home/ubuntu/test.txt"
             # echo 'Hello World!' > test.txt
             # scp test.txt ubuntu@54.88.197.133:~/test.txt
       #- save_cache:
